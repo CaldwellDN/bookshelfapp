@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+backend/books/*
+backend/thumbnails/*
+backend/library.db
+backend/__pycache__/
