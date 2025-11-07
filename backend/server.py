@@ -107,11 +107,15 @@ async def upload(
 
 
 
-@app.get('/library')
-def library() -> Dict:
-    bookList = librarytools.get_library_list()
+@app.get('/library/{user_id}')
+def library(user_id : int) -> Dict:
+    '''
+    Fetch the selected user's library.
+    '''
+    bookList = librarytools.get_library_list(user_id)
     return {"books": bookList}
 
+# Unused endpoint, remove soon.
 @app.get('/books')
 def books() -> Dict:
     books = os.listdir('./books')

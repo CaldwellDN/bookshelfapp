@@ -26,3 +26,4 @@ dist-ssr
 backend/books/*
 backend/thumbnails/*
 backend/library.db
+backend/__pycache__/

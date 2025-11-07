@@ -177,13 +177,13 @@ def delete_library_file(uuid: str) -> bool:
             flag = False
     return flag
     
-def get_library_list() -> List[Dict]:
-    keys = ['id', 'title', 'author', 'file_type']
+def get_library_list(user_id: int) -> List[Dict]:
+    keys = ['id', 'title', 'author', 'file_type', "user_id"]
     finalBookList = []
     try:
         with sqlite3.connect('library.db') as con:
             cursor = con.cursor()
-            cursor.execute("SELECT * FROM books;")
+            cursor.execute("SELECT * FROM books WHERE user_id = ?;", (user_id,))
             books = cursor.fetchall()
             for book in books:
                 bookDict = dict(zip(keys, book))

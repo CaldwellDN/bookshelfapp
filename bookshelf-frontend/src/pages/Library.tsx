@@ -3,17 +3,20 @@ import BookCard from "../components/BookCard";
 import UploadButton from "../components/UploadButton";
 import type { Book } from '../types/book'
 import EditMetadataModal from "../components/EditMetadataModal";
+import { getIDFromToken } from "../auth";
 
 
 export default function Library() {
   const [books, setBooks] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingBook, setEditingBook] = useState<Book | null>(null);
+  const token = localStorage.getItem('access_token');
+  const user_id = getIDFromToken(token);
 
   const fetchBooks = async () => {
     try {
       setLoading(true); // start loading
-      const response = await fetch("http://localhost:8000/library");
+      const response = await fetch(`http://localhost:8000/library/${user_id}`);
       const data = await response.json();
       setBooks(data.books || []);
     } catch (error) {
