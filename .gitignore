@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+backend/books/*
+backend/thumbnails/*
+backend/library.db
