@@ -4,6 +4,7 @@ from pathlib import Path
 # This script creates a base SQLite3 database for development purposes
 # Run this script from the 'backend' folder using the command: python scripts/db_init.py
 # This will place the library.db file in the correct location
+# NOTE: Once you've run this script, you'll likely want to use the /register/ endpoint to insert a user into the database.
 
 def main():
     try:
