@@ -28,3 +28,4 @@ backend/books/*
 backend/thumbnails/*
 backend/library.db
 backend/__pycache__/
+qwen/
