@@ -11,6 +11,7 @@ What works:
 
 Goals:
 - Create a more coherent, better looking web interface.
-- Pivot from SQLite to a better database solution
+- Pivot from SQLite to a better database solution (SQLAlchemy?)
 - Support more file formats (epub, txt, ...)
-- Implement multi-user library system (Library currently displays all files).
+- Metadata Extraction 
+- Refactoring of 'librarytools'
