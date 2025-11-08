@@ -1,4 +1,4 @@
 from fastapi import APIRouter
 
 
-books_router = APIRouter()
+auth_router = APIRouter()
